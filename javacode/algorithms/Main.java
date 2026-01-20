@@ -1,0 +1,27 @@
+package javacode.algorithms;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        callDFS();
+    }
+
+    private static void callDFS() {
+        // Example graph represented as an adjacency list
+        Map<Integer, ArrayList<Integer>> graph = new HashMap<>();
+        graph.put(0, new ArrayList<>(Arrays.asList(1, 2)));
+        graph.put(1, new ArrayList<>(Arrays.asList(0, 3, 4)));
+        graph.put(2, new ArrayList<>(Arrays.asList(0)));
+        graph.put(3, new ArrayList<>(Arrays.asList(1)));
+        graph.put(4, new ArrayList<>(Arrays.asList(1, 5)));
+        graph.put(5, new ArrayList<>(Arrays.asList(4)));
+
+        DepthFirstSearch dfs = new DepthFirstSearch(graph);
+        System.out.println("Depth-First Search starting from node 0:");
+        dfs.dfs(0);
+    }
+}
