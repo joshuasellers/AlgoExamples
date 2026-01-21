@@ -47,4 +47,38 @@ public class DepthFirstSearch {
             }
         }
     }
+
+    /*
+    * Use DFS to check if a path exists between two nodes in a graph
+    * To modify the standard DFS setup, have a start and end node
+    * and in the dfs recursion, check if they equal each other.
+    * If they do, return true. If the recursion ends without finding it,
+    * return false.
+    * 
+    * @param start The starting node
+    * @param end The target node
+    * @return boolean True if a path exists, false otherwise
+     */
+    public boolean dfsPathCheck(int start, int end) {
+        Map<Integer, Boolean> visited = new HashMap<>();
+        return dfsPathCheckRecursive(start, end, visited);
+    }
+
+    private boolean dfsPathCheckRecursive(int node, int end, Map<Integer, Boolean> visited) {
+        if(node == end) {
+            return true;
+        }
+        System.out.println("Visiting node: " + node);
+        System.out.println("Neighbors: " + adjacencyList.get(node));
+        // Mark the current node as visited
+        visited.put(node,true);
+        // Now recurse on all neighbor nodes
+        boolean foundPath = false;
+        for (Integer neighbor: adjacencyList.get(node)){
+            if(!visited.getOrDefault(neighbor, false)){
+                foundPath = foundPath ||dfsPathCheckRecursive(neighbor, end, visited);
+            }
+        }
+        return foundPath;
+    }
 }

@@ -7,13 +7,13 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        callDFS();
+        callDFSMethods();
         System.out.println("");
         callBFS();
         System.out.println("");
     }
 
-    private static void callDFS() {
+    private static void callDFSMethods() {
         // Example graph represented as an adjacency list
         Map<Integer, ArrayList<Integer>> graph = new HashMap<>();
         graph.put(0, new ArrayList<>(Arrays.asList(1, 2)));
@@ -26,6 +26,8 @@ public class Main {
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
         System.out.println("Depth-First Search starting from node 0:");
         dfs.dfs(0);
+        System.out.println("");
+        System.out.println("\nPath exists between 0 and 5: " + dfs.dfsPathCheck(0, 5));
     }
 
     private static void callBFS() {
