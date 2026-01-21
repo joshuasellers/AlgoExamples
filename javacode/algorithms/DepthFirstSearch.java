@@ -80,4 +80,16 @@ public class DepthFirstSearch {
         // Return whether a path was found
         return foundPath;
     }
+
+    /*
+    * Modify DFS to confirm the existence of a cycle in an undirected graph.
+     */
+
+    //TODO
+
+    /*
+    * Modify DFS to confirm the existence of a cycle in an directed graph.
+     */
+
+    //TODO
 }
