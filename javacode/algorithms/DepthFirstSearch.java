@@ -68,17 +68,16 @@ public class DepthFirstSearch {
         if(node == end) {
             return true;
         }
-        System.out.println("Visiting node: " + node);
-        System.out.println("Neighbors: " + adjacencyList.get(node));
-        // Mark the current node as visited
+        // Mark the current node as visited and check paths
         visited.put(node,true);
-        // Now recurse on all neighbor nodes
         boolean foundPath = false;
+        // Now recurse on all neighbor nodes
         for (Integer neighbor: adjacencyList.get(node)){
             if(!visited.getOrDefault(neighbor, false)){
-                foundPath = foundPath ||dfsPathCheckRecursive(neighbor, end, visited);
+                foundPath = foundPath || dfsPathCheckRecursive(neighbor, end, visited);
             }
         }
+        // Return whether a path was found
         return foundPath;
     }
 }
