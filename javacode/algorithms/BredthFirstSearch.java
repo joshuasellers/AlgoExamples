@@ -23,7 +23,7 @@ public class BredthFirstSearch {
     * 
     * Steps:
     * 1. Initialize an empty queue and a set for tracking visited nodes
-    * 2. Add the starting node to tthe queue and add it to the visited set
+    * 2. Add the starting node to the queue and add it to the visited set
     * 3. While the queue is not empty:
     *  a. Dequeue a node from the queue and mark it as current
     *  b. Iterate through its neightbors:
