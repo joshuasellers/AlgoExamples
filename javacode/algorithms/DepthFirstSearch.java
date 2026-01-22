@@ -83,13 +83,30 @@ public class DepthFirstSearch {
 
     /*
     * Modify DFS to confirm the existence of a cycle in an undirected graph.
+    * A cycle exists if you revisit a node that has already been marked as visited,
+    * and it is not the parent node from which you arrived.
+    * 
+    * @param start The starting node
+    * @return boolean True if a cycle exists, false otherwise
      */
 
-    //TODO
+    public boolean dfsCycleCheck(int start){
+        Map<Integer, Boolean> visited = new HashMap<>();
+        return dfsCycleCheckRecusive(start, visited);
+    }
 
-    /*
-    * Modify DFS to confirm the existence of a cycle in an directed graph.
-     */
-
-    //TODO
+    private boolean dfsCycleCheckRecusive(int node, Map<Integer, Boolean> visited){
+        // Mark the current node as visited
+        visited.put(node, true);
+        // Then check it's neightbors
+        boolean cycleFound = false;
+        for (Integer neighbor: adjacencyList.get(node)){
+            if (!visited.getOrDefault(neighbor, false)){
+                cycleFound = cycleFound || dfsCycleCheckRecusive(neighbor, visited);
+            } else {
+                cycleFound = true; // Cycle detected
+            }
+        }
+        return cycleFound; // No cycle found
+    }
 }

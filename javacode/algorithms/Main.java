@@ -28,6 +28,8 @@ public class Main {
         dfs.dfs(0);
         System.out.println("");
         System.out.println("\nPath exists between 0 and 5: " + dfs.dfsPathCheck(0, 5));
+        System.out.println("");
+        System.out.println("Depth-First Search checking for cycle starting at 0: " + dfs.dfsCycleCheck(0));
     }
 
     private static void callBFS() {
