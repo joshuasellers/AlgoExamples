@@ -16,6 +16,8 @@ public class Main {
         System.out.println("");
         callTwoPOinter();
         System.out.println("");
+        callSlidingWindow();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -63,7 +65,17 @@ public class Main {
     private static void callTwoPOinter(){
         List<Integer> test = new ArrayList<>(Arrays.asList(1,4,6,9,2,4,10));
         TwoPointer tp = new TwoPointer(test);
+        System.out.println("Test array " + test.toString());
         System.out.println("Confirming if sum for 11 exists: " + tp.findPair(11));
         System.out.println("Confirming if sum for 20 exists: " + tp.findPair(20));
+    }
+
+    private static void callSlidingWindow(){
+        List<Integer> test = new ArrayList<>(Arrays.asList(1,4,6,9,2,4,10));
+        SlidingWindow sw = new SlidingWindow(test);
+        System.out.println("Test array " + test.toString());
+        System.out.println("Finding max window of size 3: " + sw.slidingWindow(3));
+        System.out.println("Finding max window of size 2: " + sw.slidingWindow(2));
+        System.out.println("Finding max window of size 20: " + sw.slidingWindow(20));
     }
 }
