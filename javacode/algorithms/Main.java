@@ -11,6 +11,8 @@ public class Main {
         System.out.println("");
         callBFS();
         System.out.println("");
+        callBinarySearch();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -47,5 +49,13 @@ public class Main {
         bfs.bfs(0);
         System.out.println("Checking for path from 0 to 5");
         System.out.println(bfs.bfsCheckPath(0,5));
+    }
+
+    private static void callBinarySearch() {
+        int[] test = {1,2,3,4,5,6,7,8};
+        BinarySearch bs = new BinarySearch(test);
+        System.out.println(Arrays.toString(test));
+        System.out.println("Checking if 2 in list: " + bs.binarySearch(2));
+        System.out.println("Checking if 9 in list: " + bs.binarySearch(9));
     }
 }
