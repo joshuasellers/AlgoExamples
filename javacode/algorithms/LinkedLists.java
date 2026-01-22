@@ -48,6 +48,22 @@ public class LinkedLists {
         System.out.println("null");
     }
 
+    /*
+    * Detect if a linked list has a cycle using Floyd's Tortoise and Hare algorithm.
+    * This algorithm uses two pointers that move at different speeds.
+    * If there is a cycle, the fast pointer will eventually meet the slow pointer.
+    * 
+    * Time Complexity: O(n)
+    * Space Complexity: O(1)
+    * 
+    * Steps:
+    * 1. Initialize two pointers, fast and slow, both starting at the head of the list.
+    * 2. Move the slow pointer one step at a time and the fast pointer two steps at a time.
+    * 3. If there is a cycle, the fast pointer will eventually meet the slow pointer.
+    * 4. If the fast pointer reaches the end of the list (null), then there is no cycle.
+    * 
+    * @return boolean True if a cycle exists, false otherwise
+     */
     public boolean linkedListHasCycle(){
         boolean hasCycle = false;
 
