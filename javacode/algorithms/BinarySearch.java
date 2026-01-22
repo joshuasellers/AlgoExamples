@@ -30,7 +30,6 @@ public class BinarySearch {
                 return mid;
             } else if(inputList[mid] < target){
                 low = mid + 1;
-
             } else{
                 high = mid - 1;
             }
