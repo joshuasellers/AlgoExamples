@@ -1,6 +1,8 @@
 package javacode.algorithms;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
@@ -49,6 +51,49 @@ public class BredthFirstSearch {
                     queue.add(neighbor);
                 }
             }
+        }
+    }
+
+    /*
+    * Perform BFS to check for a path between two points.
+    * To modify the algorithm, add a start and end node. If they are the same 
+    * return true. Otherwise, break your while loop if you ever find the 
+    * goal node in the neighbors. You can also add a tracker that would show the 
+    * path.
+    * 
+    * @param start - starting node
+    * @param end - the ending node
+    * @return boolean
+     */
+    public boolean bfsCheckPath(int start, int end){
+        Queue<Integer> queue = new LinkedList<>();
+        Map<Integer,List<Integer>> visited = new HashMap();
+        Integer s = start;
+        Integer e = end;
+        List<Integer> v = new ArrayList<>();
+        v.add(s);
+
+        queue.add(s);
+        visited.put(s,v);
+
+        while(!queue.isEmpty()){
+            int current = queue.remove();
+            for(Integer neighbor: adjacencyList.get(current)){
+                if(!visited.containsKey(neighbor)){
+                    List<Integer> path = new ArrayList<>(visited.get(current));
+                    path.add(neighbor);
+                    visited.put(neighbor, path);
+                    queue.add(neighbor);
+                    if(neighbor == e) break;
+                }
+            }
+        }
+
+        if(visited.containsKey(e)){
+            System.out.println(visited.get(e));
+            return true;
+        } else {
+            return false;
         }
     }
 }

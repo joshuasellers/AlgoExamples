@@ -45,5 +45,7 @@ public class Main {
         BredthFirstSearch bfs = new BredthFirstSearch(graph);
         System.out.println("Breadth-First Search starting from node 0:");
         bfs.bfs(0);
+        System.out.println("Checking for path from 0 to 5");
+        System.out.println(bfs.bfsCheckPath(0,5));
     }
 }
