@@ -1,6 +1,7 @@
 package javacode.algorithms;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,8 @@ public class Main {
         callBFS();
         System.out.println("");
         callBinarySearch();
+        System.out.println("");
+        callTwoPOinter();
         System.out.println("");
     }
 
@@ -26,11 +29,9 @@ public class Main {
         graph.put(5, new ArrayList<>(Arrays.asList(4)));
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        System.out.println("Depth-First Search starting from node 0:");
+        System.out.print("Depth-First Search starting from node 0: ");
         dfs.dfs(0);
-        System.out.println("");
         System.out.println("\nPath exists between 0 and 5: " + dfs.dfsPathCheck(0, 5));
-        System.out.println("");
         System.out.println("Depth-First Search checking for cycle starting at 0: " + dfs.dfsCycleCheck(0));
     }
 
@@ -47,15 +48,22 @@ public class Main {
         BredthFirstSearch bfs = new BredthFirstSearch(graph);
         System.out.println("Breadth-First Search starting from node 0:");
         bfs.bfs(0);
-        System.out.println("Checking for path from 0 to 5");
+        System.out.print("\nChecking for path from 0 to 5: ");
         System.out.println(bfs.bfsCheckPath(0,5));
     }
 
     private static void callBinarySearch() {
         int[] test = {1,2,3,4,5,6,7,8};
         BinarySearch bs = new BinarySearch(test);
-        System.out.println(Arrays.toString(test));
-        System.out.println("Checking if 2 in list: " + bs.binarySearch(2));
-        System.out.println("Checking if 9 in list: " + bs.binarySearch(9));
+        System.out.println("Test array " + Arrays.toString(test));
+        System.out.println("Checking if 2 in list: " + (bs.binarySearch(2)==1));
+        System.out.println("Checking if 9 in list: " + (bs.binarySearch(9)==1));
+    }
+
+    private static void callTwoPOinter(){
+        List<Integer> test = new ArrayList<>(Arrays.asList(1,4,6,9,2,4,10));
+        TwoPointer tp = new TwoPointer(test);
+        System.out.println("Confirming if sum for 11 exists: " + tp.findPair(11));
+        System.out.println("Confirming if sum for 20 exists: " + tp.findPair(20));
     }
 }
