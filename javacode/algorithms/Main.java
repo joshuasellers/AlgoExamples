@@ -18,6 +18,8 @@ public class Main {
         System.out.println("");
         callSlidingWindow();
         System.out.println("");
+        callLinkedLists();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -77,5 +79,17 @@ public class Main {
         System.out.println("Finding max window of size 3: " + sw.slidingWindow(3));
         System.out.println("Finding max window of size 2: " + sw.slidingWindow(2));
         System.out.println("Finding max window of size 20: " + sw.slidingWindow(20));
+    }
+
+    private static void callLinkedLists(){
+        LinkedLists ll = new LinkedLists(3);
+        ll.add(2);
+        ll.add(0);
+        ll.add(-4);
+        ll.printList();
+        System.out.println("Linked list has cycle: " + ll.linkedListHasCycle());
+        // Create a cycle for testing
+        ll.add(2, ll.head); // Adding a node with value 2 that points to head to create a cycle
+        System.out.println("Linked list has cycle: " + ll.linkedListHasCycle());
     }
 }
