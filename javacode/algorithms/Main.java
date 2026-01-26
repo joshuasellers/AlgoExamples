@@ -20,6 +20,8 @@ public class Main {
         System.out.println("");
         callLinkedLists();
         System.out.println("");
+        callHeapArray();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -91,5 +93,15 @@ public class Main {
         // Create a cycle for testing
         ll.add(2, ll.head); // Adding a node with value 2 that points to head to create a cycle
         System.out.println("Linked list has cycle: " + ll.linkedListHasCycle());
+    }
+
+    private static void callHeapArray() {
+        HeapArray heap = new HeapArray(10);
+        // Additional heap operations can be called here
+        heap.insert(5);
+        heap.insert(20);
+        heap.insert(15);
+        System.out.print("Heap elements after insertions: ");
+        heap.printHeap();
     }
 }

@@ -78,7 +78,6 @@ public class LinkedLists {
                 break;
             }
         }
-
         return hasCycle;
     }
     
