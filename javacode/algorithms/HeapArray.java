@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HeapArray {
     /*
-    * Heap in array representation
+    * Heap in array representation (min-heap example here).
     * Heap is a complete binary tree that satisfies the heap property.
     * 
     * Note:
