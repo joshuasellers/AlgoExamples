@@ -22,6 +22,8 @@ public class Main {
         System.out.println("");
         callHeapArray();
         System.out.println("");
+        callDynamicProgramming();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -123,5 +125,15 @@ public class Main {
         System.out.println("Finding top " + k + " elements in array: " + Arrays.toString(testTopK));
         int[] topK = heap.topKElements(testTopK, k);
         System.out.println("Top " + k + " elements: " + Arrays.toString(topK));
+    }
+
+    private static void callDynamicProgramming() {
+        DynamicProgramming dp = new DynamicProgramming();
+        int n = 5;
+        System.out.println("Fibonacci of " + n + " is: " + dp.fibonacci(n));
+        n = 10;
+        System.out.println("Fibonacci of " + n + " is: " + dp.fibonacci(n));
+        n = 20;
+        System.out.println("Fibonacci of " + n + " is: " + dp.fibonacci(n));
     }
 }
