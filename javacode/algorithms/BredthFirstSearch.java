@@ -67,7 +67,7 @@ public class BredthFirstSearch {
      */
     public boolean bfsCheckPath(int start, int end){
         Queue<Integer> queue = new LinkedList<>();
-        Map<Integer,List<Integer>> visited = new HashMap();
+        Map<Integer,List<Integer>> visited = new HashMap<>();
         Integer s = start;
         Integer e = end;
         List<Integer> v = new ArrayList<>();
