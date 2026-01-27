@@ -106,9 +106,17 @@ public class Main {
         heap.insert(7);
         System.out.print("Heap elements after insertions: ");
         heap.printHeap();
+        heap.prettyPrintHeap();
         System.out.println("Peek top element: " + heap.peek());
         System.out.println("Poll top element: " + heap.poll());
         System.out.print("Heap elements after polling: ");
         heap.printHeap();
+        heap.prettyPrintHeap();
+        int[] newArray = {4, 6, 9, 3, 2, 8, 3};
+        System.out.println("Heapifying new array: " + Arrays.toString(newArray));
+        heap.heapify(newArray);
+        System.out.print("Heap elements after heapify: ");
+        heap.printHeap();
+        heap.prettyPrintHeap();
     }
 }

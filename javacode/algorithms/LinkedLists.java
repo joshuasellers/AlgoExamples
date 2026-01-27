@@ -1,8 +1,8 @@
 package javacode.algorithms;
 
-import java.util.LinkedList;
 
 public class LinkedLists {
+    // In java, the LinkedList class is built-in, but we will create our own for demonstration.
 
     public class ListNode{
         int val;
@@ -22,6 +22,20 @@ public class LinkedLists {
         this.head = new ListNode(val);
     }
 
+    /*
+    * Add a new node with the given value to the end of the linked list.
+    *
+    * Steps:
+    * 1. Create a new node with the given value.
+    * 2. Traverse the list to find the last node.
+    * 3. Set the next pointer of the last node to the new node.
+    *
+    * Time Complexity: O(n)
+    * Space Complexity: O(1)
+    * 
+    * @param val The value to be added to the linked list.
+    * @return void
+     */
     public void add(int val){
         ListNode curr = head;
         while(curr.next != null){
@@ -30,6 +44,22 @@ public class LinkedLists {
         curr.next = new ListNode(val);
     }
 
+    /**
+     * Add a new node with the given value before the specified node.
+     *
+     * Steps:
+     * 1. Create a new node with the given value.
+     * 2. Traverse the list to find the specified node.
+     * 3. Set the next pointer of the new node to the specified node.
+     * 4. Set the next pointer of the previous node to the new node.
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     *
+     * @param val The value to be added to the linked list.
+     * @param node The node before which the new node will be inserted.
+     * @return void
+     */
     public void add(int val, ListNode node){
         ListNode newNode = new ListNode(val, node);
         ListNode curr = head;
