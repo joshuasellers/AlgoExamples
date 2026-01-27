@@ -18,7 +18,8 @@ public class BredthFirstSearch {
 
     /*
     * Perform breadth-first search (BFS) on the graph.
-    * This algorithm starts at a node and explores all its neighbos.
+    * This algorithm starts at a node and explores all its neighbors.
+    * It is used to find the shortest path in unweighted graphs.
     * 
     * Time Complexity: O(V + E) where V is the number of vertices and E is the number of edges.
     * Space Complexity: O(V) for the queue in the worst case.

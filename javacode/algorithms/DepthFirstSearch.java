@@ -16,6 +16,7 @@ public class DepthFirstSearch {
     * Perform depth-first search (DFS) on the graph.
     * A graph traversal algorithm that starts at a node and
     * explores as far away as possible along each branch recursively.
+    * This algorithm is used to find a path between two nodes or to check for cycles.
     * 
     * Time Complexity: O(V + E) where V is the number of vertices and E is the number of edges.
     * Space Complexity: O(V) for the recursion stack in the worst case.

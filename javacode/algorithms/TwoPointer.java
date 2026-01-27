@@ -13,7 +13,8 @@ public class TwoPointer {
     }
     
     /*
-    * Using the Two POinter technique, you can find if a pair is in a list.
+    * Using the Two Pointer technique, you can find if a pair is in a list.
+    * Consider the problem of finding a pair of numbers in an array that sum to a specific target value.
     * 
     * Steps:
     * 1. Sort list (you can also assume list is sorted, but I want to sort)
