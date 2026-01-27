@@ -127,6 +127,16 @@ public class HeapArray {
         heapArray = newArray;
         size = newArray.length;
 
+        if (size == 1){
+            return;
+        } else if (size == 2){
+            if (heapArray[0] > heapArray[1]){
+                int temp = heapArray[0];
+                heapArray[0] = heapArray[1];
+                heapArray[1] = temp;
+            }
+            return;
+        }
         int indexOfFirstNonLeaf = parent(size - 1);
         for (int i = indexOfFirstNonLeaf; i >= 0; i--){
             int trackingIndex = i;
