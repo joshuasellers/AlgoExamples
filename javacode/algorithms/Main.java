@@ -101,7 +101,14 @@ public class Main {
         heap.insert(5);
         heap.insert(20);
         heap.insert(15);
+        heap.insert(30);
+        heap.insert(11);
+        heap.insert(7);
         System.out.print("Heap elements after insertions: ");
+        heap.printHeap();
+        System.out.println("Peek top element: " + heap.peek());
+        System.out.println("Poll top element: " + heap.poll());
+        System.out.print("Heap elements after polling: ");
         heap.printHeap();
     }
 }

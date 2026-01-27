@@ -18,7 +18,6 @@ public class HeapArray {
         heapArray = Arrays.copyOf(heapArray, heapArray.length * 2);
     }
 
-    /* 
     private int leftChild(int index) {
         return 2 * index + 1;
     }
@@ -26,7 +25,6 @@ public class HeapArray {
     private int rightChild(int index) {
         return 2 * index + 2;
     }
-    */
 
     private int parent(int index) {
         return (index - 1) / 2;
@@ -46,16 +44,34 @@ public class HeapArray {
         }
     }
 
-    /* 
 
     public int poll(){
+        int output = heapArray[0];
+        heapArray[0] = heapArray[size-1];
+        size--;
 
+        int trackingIndex = 0;
+
+        
+        while (trackingIndex < size && 
+            (heapArray[trackingIndex] > heapArray[leftChild(trackingIndex)] || heapArray[trackingIndex] > heapArray[leftChild(trackingIndex)])){
+                int temp = heapArray[trackingIndex];
+                if (heapArray[trackingIndex] - heapArray[leftChild(trackingIndex)] > heapArray[trackingIndex] - heapArray[rightChild(trackingIndex)]){
+                    heapArray[trackingIndex] = heapArray[leftChild(trackingIndex)];
+                    heapArray[leftChild(trackingIndex)] = temp;
+                    trackingIndex = leftChild(trackingIndex);
+                } else{
+                    heapArray[trackingIndex] = heapArray[rightChild(trackingIndex)];
+                    heapArray[rightChild(trackingIndex)] = temp;
+                    trackingIndex = rightChild(trackingIndex);
+                }
+        }
+        return output;
     }
 
     public int peek(){
-
+        return heapArray[0];
     }
-    */
 
     public void printHeap(){
         for (int i = 0; i < size; i++){
