@@ -148,7 +148,6 @@ public class HeapArray {
     }
 
     public void prettyPrintHeap(){
-        int level = 0;
         int elementsInLevel = 1;
         int index = 0;
         while (index < size){
@@ -157,7 +156,6 @@ public class HeapArray {
                 index++;
             }
             System.out.println("");
-            level++;
             elementsInLevel *= 2;
         }
     }
