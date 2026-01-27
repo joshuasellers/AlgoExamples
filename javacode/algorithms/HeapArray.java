@@ -188,14 +188,22 @@ public class HeapArray {
 
     public void prettyPrintHeap(){
         int elementsInLevel = 1;
+        int centerSpace = 4;
         int index = 0;
         while (index < size){
             for (int i = 0; i < elementsInLevel && index < size; i++){
+                for (int j = 0; j < centerSpace; j++){
+                    System.out.print(" ");
+                }
                 System.out.print(heapArray[index] + " ");
                 index++;
+                for (int j = 0; j < centerSpace; j++){
+                    System.out.print(" ");
+                }
             }
             System.out.println("");
             elementsInLevel *= 2;
+            centerSpace = Math.max(1, centerSpace / 2);
         }
     }
 
