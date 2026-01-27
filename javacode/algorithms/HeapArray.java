@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class HeapArray {
     /*
     * Heap in array representation
+    * Heap is a complete binary tree that satisfies the heap property.
+    * 
+    * Note:
     * By default, PriorityQueue is a min-heap in Java HeapQ is the python version
     * 
     * Java example:
