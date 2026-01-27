@@ -105,6 +105,18 @@ public class HeapArray {
         return heapArray[0];
     }
 
+    /**
+     * Convert an arbitrary array into a valid heap.
+     * Steps:
+     * 1. Start from the index of the last non-leaf node and move upwards to the root.
+     * 2. For each node, compare it with its children; if it's larger than either child, swap it with the smaller child.
+     * 3. Repeat step 2 until the element is in the correct position or it becomes a leaf.
+     * 4. Decrement the index and repeat steps 2-4 until the root is processed.
+     * 
+     * Time Complexity: O(n) - building a heap from an array is linear in the number of elements.
+     * Space Complexity: O(1) - as it uses a fixed amount of space.
+     * @param newArray
+     */
     public void heapify(int[] newArray){
         heapArray = newArray;
         size = newArray.length;
