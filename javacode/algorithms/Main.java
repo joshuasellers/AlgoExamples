@@ -118,5 +118,10 @@ public class Main {
         System.out.print("Heap elements after heapify: ");
         heap.printHeap();
         heap.prettyPrintHeap();
+        int[] testTopK = {3, 1, 5, 12, 2, 11, 7, 6};
+        int k = 3;
+        System.out.println("Finding top " + k + " elements in array: " + Arrays.toString(testTopK));
+        int[] topK = heap.topKElements(testTopK, k);
+        System.out.println("Top " + k + " elements: " + Arrays.toString(topK));
     }
 }

@@ -76,8 +76,14 @@ public class HeapArray {
         size--;
 
         int trackingIndex = 0;
-
-
+        if (size == 2){
+            if (heapArray[0] > heapArray[1]){
+                int temp = heapArray[0];
+                heapArray[0] = heapArray[1];
+                heapArray[1] = temp;
+            }
+            return output;
+        }
         while (trackingIndex < size && (leftChild(trackingIndex) < size && rightChild(trackingIndex) < size) &&
             (heapArray[trackingIndex] > heapArray[leftChild(trackingIndex)] || heapArray[trackingIndex] > heapArray[rightChild(trackingIndex)])){
                 int temp = heapArray[trackingIndex];
@@ -158,5 +164,35 @@ public class HeapArray {
             System.out.println("");
             elementsInLevel *= 2;
         }
+    }
+
+    // Example problems using heap
+
+    /**
+     * Find the top K largest elements in an array.
+     * Steps:
+     * 1. Create a min-heap with the first K elements of the array.
+     * 2. Iterate through the remaining elements of the array.
+     * 3. For each element, if it's larger than the root of the min-heap, replace the root with this element and heapify.
+     * 4. After processing all elements, the min-heap will contain the top K largest elements.
+     * 
+     * Time Complexity: O(n log k) - where n is the number of elements in the array and k is the number of top elements to find.
+     * Space Complexity: O(k) - for storing the top K elements in the heap.
+     * @param arr
+     * @param k
+     * @return
+     */
+    public int[] topKElements(int[] arr, int k){
+        if(arr.length == k) return arr;
+
+        int[] subArray = Arrays.copyOfRange(arr, 0, k);
+        heapify(subArray);
+        for (int i = k; i < arr.length; i++){
+            if (arr[i] > peek()){
+                poll();
+                insert(arr[i]);
+            }
+        }
+        return heapArray;
     }
 }
