@@ -3,8 +3,28 @@ package javacode.algorithms;
 import java.util.Arrays;
 
 public class HeapArray {
-    // Heap in array representation
-    // By default, PriorityQueue is a min-heap in Java HeapQ is the python version
+    /*
+    * Heap in array representation
+    * By default, PriorityQueue is a min-heap in Java HeapQ is the python version
+    * 
+    * Java example:
+    * import java.util.PriorityQueue;
+    * PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    * minHeap.offer(1); // inserts element
+    * minHeap.poll(); // removes and returns the smallest element
+    * minHeap.peek(); // returns the smallest element without removing it
+    * 
+    * Python example:
+    * import heapq
+    * heap = [1,2,3,4,5,6]
+    * heapq.heapify(heap) # transforms list into a heap in-place
+    * heapq.heappop(heap) # pops the smallest element
+    * heapq.heappush(heap, 0) # pushes a new element onto the heap
+    * 
+    * Time complexity for insert and poll is O(log n)
+    * Space complexity is O(n) for storing n elements
+     */
+
     private int[] heapArray;
     private int size;
 
