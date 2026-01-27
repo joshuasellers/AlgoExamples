@@ -15,7 +15,7 @@ public class BinarySearch {
     * Space complexity is O(1) - since you make no new data types
     * 
     * Steps:
-    * 1. Get the middle of the array from it's length and 0 (set those to low and high)
+    * 1. Get the middle of the array, its length and 0 (set those final two numbers to low and high)
     * 2. While low <= high
     *   a. If arr[mid] equals the goal int, return that index
     *   b. If arr[mid] is less than the goal, update low to mid + 1 and loop again
