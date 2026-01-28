@@ -77,6 +77,11 @@ public class MiscProblems {
             invalidSwaps += (long)freq * (freq - 1) / 2;
         }
 
+        // If there is at least one pair of identical characters, swapping that pair doesn't create a new string
+        if (invalidSwaps > 0) {
+            return totalSwaps - invalidSwaps + 1;
+        }
+
         return totalSwaps - invalidSwaps;
     }
 }

@@ -142,37 +142,12 @@ public class Main {
     private static void callMiscProblems() {
         MiscProblems mp = new MiscProblems();
         System.out.println("Unique swaps for 'abc': " + mp.countUniqueSwapsBasic("abc"));
+        System.out.println("Swaps using complex method for 'abc': " + mp.countUniqueSwapsComplex("abc"));
         System.out.println("Unique swaps for 'aabc': " + mp.countUniqueSwapsBasic("aabc"));
+        System.out.println("Swaps using complex method for 'aabc': " + mp.countUniqueSwapsComplex("aabc"));
         System.out.println("Unique swaps for 'aabbc': " + mp.countUniqueSwapsBasic("aabbc"));
+        System.out.println("Swaps using complex method for 'aabbc': " + mp.countUniqueSwapsComplex("aabbc"));
         System.out.println("Unique swaps for 'aabbcc': " + mp.countUniqueSwapsBasic("aabbcc"));
-
-        System.out.println("Unique swaps for 'abcd': " + mp.countUniqueSwapsBasic("abcd"));
-        System.out.println("Unique swaps for 'aabcd': " + mp.countUniqueSwapsBasic("aabcd"));
-        System.out.println("Unique swaps for 'aabbcd': " + mp.countUniqueSwapsBasic("aabbcd"));
-        System.out.println("Unique swaps for 'aabbccd': " + mp.countUniqueSwapsBasic("aabbccd"));
+        System.out.println("Swaps using complex method for 'aabbcc': " + mp.countUniqueSwapsComplex("aabbcc"));
     }
-    /*
-    1 1 1
-
-    1*1 + 1*1 + 1*1
-    3
-
-    2 1 1
-    2*1 2*1 1*1 + 1
-    6
-
-    2 2 1
-    2*2 2*1 2*1 + 1
-    9
-
-    2 2 2
-    2*2 2*2 2*2 + 1
-    13
-
-    1/1 1/1 1/1 1/1 1.1 1/1
-
-    2/1 2/1 2/1 1/1 1/1 1/1 + 1
-
-    2/2 2/1 2/1 2/1 2/1 1/1 + 1
-    */
 }
