@@ -47,7 +47,7 @@ public class MiscProblems {
      * 1. Count frequency of each character
      * 2. Calculate total possible swaps: n * (n - 1) / 2
      * 3. Calculate invalid swaps: sum of (freq[c] * (freq[c] - 1) / 2) for each character c
-     * 4. Subtract invalid swaps (swaps that don't change the string)
+     * 4. Subtract invalid swaps (swaps that don't change the string) but add 1 if there is at least one pair of identical characters
      * 5. Return the count of unique strings
      * 
      * Explanation of formulas:
