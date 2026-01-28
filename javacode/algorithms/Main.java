@@ -149,5 +149,10 @@ public class Main {
         System.out.println("Swaps using complex method for 'aabbc': " + mp.countUniqueSwapsComplex("aabbc"));
         System.out.println("Unique swaps for 'aabbcc': " + mp.countUniqueSwapsBasic("aabbcc"));
         System.out.println("Swaps using complex method for 'aabbcc': " + mp.countUniqueSwapsComplex("aabbcc"));
+
+        System.out.println("Highest value substrings for 'abc': " + mp.getHighestSubstrings("abc"));
+        System.out.println("Highest value substrings for 'aabc': " + mp.getHighestSubstrings("azbc"));
+        System.out.println("Highest value substrings for 'aabbc': " + mp.getHighestSubstrings("atbbc"));
+        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("aafgnc"));  
     }
 }

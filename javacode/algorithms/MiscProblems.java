@@ -1,5 +1,9 @@
 package javacode.algorithms;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class MiscProblems {
     
     public MiscProblems() {
@@ -83,5 +87,60 @@ public class MiscProblems {
         }
 
         return totalSwaps - invalidSwaps;
+    }
+
+    /**
+     * Given an input string, return a list of the highest value substrings at each sublength that have the highest
+     * sum of character values (a=1, b=2, ..., z=26). Substring must retain original order, but don't have to be contiguous.
+     * 
+     * Example:
+     * Input: "abc"
+     * Output: ["abc", "bc", "c"]
+     * Explanation:
+     * - Length 3: "abc" (sum=6)
+     * - Length 2: "ab" (sum=3), "bc" (sum=5) -> "bc" is highest
+     * - Length 1: "a" (sum=1), "b" (sum=2), "c" (sum=3) -> "c" is highest
+     *
+     * Steps:
+     * 1. Precompute character values for the input string.
+     * 2. For each possible substring length L from n down to 1:
+     *    a. Create a list of indices from 0 to n-1.
+     *    b. Sort indices based on character values in descending order, using original index as a tiebreaker.
+     *    c. Select the top L indices and sort them to restore original order.
+     *    d. Construct the substring from these indices and add to the result list.
+     * 3. Return the list of highest value substrings.
+     * 
+     * Time Complexity: O(n^2 log n) - due to sorting for each substring length
+     * Space Complexity: O(n) - for storing indices and result substrings
+     * 
+     * @param input
+     * @return List<String> The list of highest value substrings
+     */
+    public List<String> getHighestSubstrings(String input){
+        // Precompute values
+        int[] value = new int[input.length()];
+        for (int i = 0; i < input.length(); i++) value[i] = (input.charAt(i) - 'a' + 1);
+
+        List<String> result = new ArrayList<>();
+        // For each length L, pick the L indices with largest values, then restore order
+        for (int L = input.length(); L >= 1; L--) { 
+            List<Integer> indices = new ArrayList<>();
+            for (int i = 0; i < input.length(); i++) indices.add(i);
+
+            // sort by value desc, tie-break by index asc
+            indices.sort((i, j) -> {
+                int cmp = Integer.compare(value[j], value[i]); // descending by value
+                return (cmp != 0) ? cmp : Integer.compare(i, j);
+            });
+
+            List<Integer> top = indices.subList(0, L);
+            top.sort(Integer::compareTo); // restore original order
+
+            StringBuilder sb = new StringBuilder();
+            for (int idx : top) sb.append(input.charAt(idx));
+            result.add(sb.toString());
+        }
+
+        return result;
     }
 }
