@@ -125,7 +125,6 @@ public class MiscProblems {
         for (int L = input.length(); L >= 1; L--) { 
             List<Integer> indices = new ArrayList<>();
             for (int i = 0; i < input.length(); i++) indices.add(i);
-
             // sort by value desc, tie-break by index asc
             indices.sort((i, j) -> {
                 int cmp = Integer.compare(value[j], value[i]); // descending by value

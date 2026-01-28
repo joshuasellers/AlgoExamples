@@ -154,5 +154,6 @@ public class Main {
         System.out.println("Highest value substrings for 'aabc': " + mp.getHighestSubstrings("azbc"));
         System.out.println("Highest value substrings for 'aabbc': " + mp.getHighestSubstrings("atbbc"));
         System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("aafgnc"));  
+        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("zyxazyx"));  
     }
 }
