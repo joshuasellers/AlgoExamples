@@ -18,5 +18,15 @@ Things to look for from an interview question:
 5. Time and space complexity analysis -> analyzing the time and space complexity of your solution can help you understand its efficiency
   a. Example: if your algorithm has a time complexity of O(n log n), it may not be suitable for very large inputs.
 
+What each of the algorithms solve (to help with interview prep):
+- Binary Search: Efficiently finds the position of a target value within a sorted array.
+- Bredth-First Search (BFS): Explores all neighbors at the present depth prior to moving on to nodes at the next depth level in a graph or tree. Good for finding the shortest path in unweighted graphs.
+- Depth-First Search (DFS): Explores as far as possible along each branch before backtracking. Useful for pathfinding and topological sorting.
+- Dynamic Programming: Solves complex problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid redundant computations.
+- Linked Lists: A linear data structure where each element points to the next, allowing for efficient insertions and deletions.
+- Heaps: A specialized tree-based data structure that satisfies the heap property, useful for implementing priority queues.
+- Sliding Window: A technique for solving problems that involve finding a subarray or substring that satisfies certain conditions, by maintaining a window that slides over the data structure.
+- Two Pointers: A technique that uses two pointers to traverse a data structure, often used for problems involving sorted arrays or linked lists.
+
 ## License
 This code is licensed under the MIT License. You are free to use, modify, and distribute this code as long as you include the original license and copyright notice.
