@@ -57,10 +57,9 @@ public class BredthFirstSearch {
 
     /*
     * Perform BFS to check for a path between two points.
-    * To modify the algorithm, add a start and end node. If they are the same 
-    * return true. Otherwise, break your while loop if you ever find the 
-    * goal node in the neighbors. You can also add a tracker that would show the 
-    * path.
+    * To modify the algorithm, add a start and end node. As you visit each node,
+    * Update a given nodes path with the path to get there. At the end, check if the end node
+    * was visited, and if so return the path to get there.
     * 
     * @param start - starting node
     * @param end - the ending node
