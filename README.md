@@ -28,5 +28,18 @@ What each of the algorithms solve (to help with interview prep):
 - Sliding Window: A technique for solving problems that involve finding a subarray or substring that satisfies certain conditions, by maintaining a window that slides over the data structure.
 - Two Pointers: A technique that uses two pointers to traverse a data structure, often used for problems involving sorted arrays or linked lists.
 
+Data Characteristics:
+- Sorted data or the need for efficient searching: This often points towards Binary Search or related techniques.
+- Tree or graph problems: Consider Depth-First Search (DFS) or Breadth-First Search (BFS) traversals.
+- Optimization or finding a best/maximum/minimum value: Look for problems that can be solved with a Greedy Algorithm, Dynamic Programming, or possibly Dijkstra's/similar pathfinding if a grid is involved.
+- Sequence/array problems involving subarrays or contiguous segments: A Sliding Window technique might be appropriate.
+- Counting frequencies or checking existence quickly: A Hash Map/Set is usually efficient.
+Problem Clues:
+- "Find the shortest path" in a grid/graph: Likely a graph algorithm like BFS or A*.
+- "Find all permutations/subsets" or problems with many possible combinations: This often requires Backtracking or Recursion.
+- "Process elements in a specific order" (e.g., by size/priority): Consider using a Heap/Priority Queue.
+- "Modify an array in-place" with pointers: The Two Pointers approach is common.
+
+
 ## License
 This code is licensed under the MIT License. You are free to use, modify, and distribute this code as long as you include the original license and copyright notice.
