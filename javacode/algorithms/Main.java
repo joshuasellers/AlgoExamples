@@ -26,6 +26,8 @@ public class Main {
         System.out.println("");
         callMiscProblems();
         System.out.println("");
+        callStacksProblems();
+        System.out.println("");
     }
 
     private static void callDFSMethods() {
@@ -155,13 +157,17 @@ public class Main {
         System.out.println("Highest value substrings for 'aabbc': " + mp.getHighestSubstrings("atbbc"));
         System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("aafgnc"));  
         System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("zyxazyx")); 
-        
+    }
+
+    private static void callStacksProblems(){
+        Stacks s = new Stacks();
+
         List<List<String>> logs = new ArrayList<>();
         logs.add(Arrays.asList("100", "main", "true"));
         logs.add(Arrays.asList("200", "foo", "true"));
         logs.add(Arrays.asList("300", "foo", "false"));
         logs.add(Arrays.asList("400", "main", "false"));
-        System.out.println("Simplified logs: " + mp.outputLoggerLevels(logs));
+        System.out.println("Simplified logs: " + s.outputLoggerLevels(logs));
         List<List<String>> logs2 = new ArrayList<>();
         logs2.add(Arrays.asList("200", "main", "true"));
         logs2.add(Arrays.asList("300", "foo", "true"));
@@ -169,6 +175,13 @@ public class Main {
         logs2.add(Arrays.asList("500", "foo", "false"));
         logs2.add(Arrays.asList("600", "foo", "false"));
         logs2.add(Arrays.asList("700", "main", "false"));
-        System.out.println("Simplified logs: " + mp.outputLoggerLevels(logs2));
+        System.out.println("Simplified logs: " + s.outputLoggerLevels(logs2));
+
+        String test1 = "(){({})}";
+        String test2 = "({[)]}";
+        String test3 = "((()))[]{}";
+        System.out.println("String " + test1 + " is valid: " + s.validString(test1));
+        System.out.println("String " + test2 + " is valid: " + s.validString(test2));
+        System.out.println("String " + test3 + " is valid: " + s.validString(test3));
     }
 }
