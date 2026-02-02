@@ -117,6 +117,6 @@ public class Stacks {
                 closingChars.pop();
             }
         }
-        return true;
+        return true && closingChars.isEmpty();
     }
 }
