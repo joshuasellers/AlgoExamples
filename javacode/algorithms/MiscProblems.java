@@ -1,7 +1,9 @@
 package javacode.algorithms;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 public class MiscProblems {
     
@@ -140,5 +142,59 @@ public class MiscProblems {
         }
 
         return result;
+    }
+
+    /**
+     * Given a list of logs, output their simplified logger levels. Each input log will have three components: timestamp, function name, entering/exiting flag.
+     * The output log for each function will have three components: time used in the function, function name, function level.
+     * 
+     * Example input:
+     * [["200","main","true"], ["300", "foo", "true"], ["400", "foo", "false"], ["500", "main", "false"]]
+     * Example output:
+     * [[300,"main",1], [100, "foo", 2]]
+     * 
+     * Explanation:
+     * - main starts at 200 and ends at 500, total time = 300
+     *   - It is the outside function, level = 1
+     * - foo starts at 300 and ends at 400, total time = 100, 
+     *   - It is inside main, level = 2
+     * 
+     * Steps:
+     * 1. Convert input list to stack for processing.
+     * 2. Iterate through the logs, using a stack to track function calls and their levels.
+     * 3. For each log, calculate the time spent in the function and determine its level.
+     * 4. Store the results in a list and return it.
+     */
+    public List<List<String>> outputLoggerLevels(List<List<String>> logs){
+        Stack<List<String>> logStack = new Stack<>();
+        for (List<String> log : logs){
+            logStack.push(log);
+        }
+
+
+        List<List<String>> output = new ArrayList<>();
+        int level = 0;
+        Stack<List<String>> falseTracker = new Stack<>();
+        while (!logStack.isEmpty()){
+            List<String> log = logStack.pop();
+            if (log.get(2).equals("false")){
+                level++;
+                falseTracker.push(log);
+            } else {
+                List<String> newOutput = new ArrayList<>();
+                List<String> falseOutput = falseTracker.pop();
+                int timeStamp = Integer.parseInt(falseOutput.get(0)) - Integer.parseInt(log.get(0));
+                newOutput.add(Integer.toString(timeStamp));
+                newOutput.add(log.get(1));
+                newOutput.add(Integer.toString(level));
+                output.add(newOutput);
+                level--;
+            }
+        }
+        Collections.sort(output, (a, b) -> {
+            return Integer.compare(Integer.parseInt(a.get(2)), Integer.parseInt(b.get(2)));
+        });
+
+        return output;
     }
 }

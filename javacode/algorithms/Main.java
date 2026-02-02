@@ -154,6 +154,21 @@ public class Main {
         System.out.println("Highest value substrings for 'aabc': " + mp.getHighestSubstrings("azbc"));
         System.out.println("Highest value substrings for 'aabbc': " + mp.getHighestSubstrings("atbbc"));
         System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("aafgnc"));  
-        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("zyxazyx"));  
+        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("zyxazyx")); 
+        
+        List<List<String>> logs = new ArrayList<>();
+        logs.add(Arrays.asList("100", "main", "true"));
+        logs.add(Arrays.asList("200", "foo", "true"));
+        logs.add(Arrays.asList("300", "foo", "false"));
+        logs.add(Arrays.asList("400", "main", "false"));
+        System.out.println("Simplified logs: " + mp.outputLoggerLevels(logs));
+        List<List<String>> logs2 = new ArrayList<>();
+        logs2.add(Arrays.asList("200", "main", "true"));
+        logs2.add(Arrays.asList("300", "foo", "true"));
+        logs2.add(Arrays.asList("400", "foo", "true"));
+        logs2.add(Arrays.asList("500", "foo", "false"));
+        logs2.add(Arrays.asList("600", "foo", "false"));
+        logs2.add(Arrays.asList("700", "main", "false"));
+        System.out.println("Simplified logs: " + mp.outputLoggerLevels(logs2));
     }
 }
