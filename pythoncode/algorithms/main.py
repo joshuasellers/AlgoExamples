@@ -44,6 +44,16 @@ def test_algorithm():
     can_attend = i.canAttendMeetings()
     print(f"Can attend meetings: {can_attend}")
 
+    i = intervals.Intervals([[1, 3], [4, 5], [8, 10]])
+    new_interval = [2, 6]
+    merged_intervals = i.insertIntervals(new_interval)
+    print(f"Merged intervals after inserting {new_interval}: {merged_intervals}")
+
+    i = intervals.Intervals([[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]])
+    new_interval = [4, 8]
+    merged_intervals = i.insertIntervals(new_interval)
+    print(f"Merged intervals after inserting {new_interval}: {merged_intervals}")
+
 
 def main():
     """Main function to execute the algorithm."""
