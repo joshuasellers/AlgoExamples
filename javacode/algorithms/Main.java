@@ -153,10 +153,10 @@ public class Main {
         System.out.println("Swaps using complex method for 'aabbcc': " + mp.countUniqueSwapsComplex("aabbcc"));
 
         System.out.println("Highest value substrings for 'abc': " + mp.getHighestSubstrings("abc"));
-        System.out.println("Highest value substrings for 'aabc': " + mp.getHighestSubstrings("azbc"));
-        System.out.println("Highest value substrings for 'aabbc': " + mp.getHighestSubstrings("atbbc"));
-        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("aafgnc"));  
-        System.out.println("Highest value substrings for 'aabbcc': " + mp.getHighestSubstrings("zyxazyx")); 
+        System.out.println("Highest value substrings for 'azbc': " + mp.getHighestSubstrings("azbc"));
+        System.out.println("Highest value substrings for 'atbbc': " + mp.getHighestSubstrings("atbbc"));
+        System.out.println("Highest value substrings for 'aafgnc': " + mp.getHighestSubstrings("aafgnc"));  
+        System.out.println("Highest value substrings for 'zyxazyx': " + mp.getHighestSubstrings("zyxazyx")); 
     }
 
     private static void callStacksProblems(){
